@@ -52,8 +52,10 @@ print("***********************************")
 brands = ("Nike", "Adidas", "puma")
 print("Original tuple: ", brands)
 if "puma" in brands:
-    print("Found at index:", brands.index("Puma"))
-
+    # print("Found at index:", brands.index("Puma")) show valueerror because case senstive
+    print("Found at index:", brands.index("puma"))
+else:
+    print("not found")
 
 print("*************************************")
 # Condition with Slicing
@@ -91,3 +93,63 @@ t = (5, 6, 7, 8)
 if 7 in t:
     i = t.index(7)
     print("Found at:", i)
+
+print("**************************************")
+students = (
+    ("Ali", ("Math", 85), ("Science", 90)),
+    ("Sara", ("Math", 92), ("Science", 88)),
+    ("Zara", ("Math", 78), ("Science", 80))
+)
+
+
+print("🎓 Student Grades (with indexing):")
+for student in students:
+    name = student[0]
+    math_score = student[1][1]
+    science_score = student[2][1]
+    print(f"{name}: Math = {math_score}, Science = {science_score}")
+
+
+print("*******************************************")
+print("\n📦 Student Grades (with unpacking):")
+for name, (sub1, mark1), (sub2, mark2) in students:
+    print(f"{name}: {sub1} = {mark1}, {sub2} = {mark2}")
+
+
+print("*********************************************")
+print("\n🔢 Access using index range:")
+for i in range(len(students)):
+    name = students[i][0]
+    math_score = students[i][1][1]
+    science_score = students[i][2][1]
+    print(f"{name}: Math = {math_score}, Science = {science_score}")
+print("*****************************************************")
+pizza_orders = (
+    ("Order001", ("Pepperoni", "Large", ("Cheese Burst", "Extra Olives"))),
+    ("Order002", ("Veggie", "Medium", ("Thin Crust", "Mushrooms"))),
+)
+
+print("\n🍕 Pizza Orders:")
+for order_id, (flavor, size, customizations) in pizza_orders:
+    print(f"{order_id}: {flavor} ({size}) with {', '.join(customizations)}")
+
+print("*********************************************")
+students = (
+    ("Ali", ("Math", 85), ("Science", 90)),
+    ("Sara", ("Math", 92), ("Science", 88, ("ali", "khan", "meer"))),
+)
+print("🎓 Student Records with Deep Nesting:")
+for student in students:
+    name = student[0]
+    math_score = student[1][1]
+    
+    # Handle nested structure of Science tuple
+    science_data = student[2]
+    science_score = science_data[1]
+    
+    # Check if bonus info is present
+    if len(science_data) > 2:
+        bonus_names = science_data[2]
+        print(f"{name}: Math = {math_score}, Science = {science_score}, Extra = {', '.join(bonus_names)}")
+    else:
+        print(f"{name}: Math = {math_score}, Science = {science_score}")
