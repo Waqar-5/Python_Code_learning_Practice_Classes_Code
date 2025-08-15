@@ -1,0 +1,97 @@
+Git & GitHub Guide
+
+Basic Concepts
+Git ->   	Version control system (VCS) to track code changes locally.
+GitHub ->   	Remote platform to host Git repositories and collaborate.
+Version ->    Numbers (e.g., 1.2.4)	1 → major release (big changes), 2 → new features, 4 → bug fixes.
+Local ->   	Repository on your computer.
+Remote ->   	Repository hosted online (e.g., GitHub).
+Directory ->   	Folder where your project resides.
+Stage / Index ->   	Area to prepare files before committing.
+Commit ->   	Snapshot of your project at a point in time, generates a commit ID.
+Head ->   	Pointer to the latest commit in the current branch.
+Branch ->   	Parallel version of your project to work independently.
+
+
+Core Git Commands
+1 Repository Management
+git init                 # Initialize a Git repository locally
+git clone <repo_url>     # Copy remote repo to local machine
+
+2 Tracking Changes
+git status               # Show current changes (tracked/untracked)
+git add <file>           # Stage a specific file
+git add .                # Stage all files
+git commit -m "message"  # Commit staged changes with a message
+
+3 Viewing History
+git log                  # See all commits with commit IDs
+git show HEAD            # Show details of latest commit
+git diff                 # Show changes not yet staged
+git diff --staged        # Show changes staged for commit
+
+4 Navigating Commits
+git checkout <commit_id>     # Move HEAD to specific commit
+git checkout -b <branch>     # Create and switch to a new branch
+git switch <branch_name>     # Switch to another branch
+
+5 Connecting to Remote
+git remote add origin <url>  # Link local repo to remote
+git push -u origin main      # Push commits to remote branch (main/master)
+git pull origin main         # Fetch and merge remote changes
+
+3. Branching & Merging
+1. Branching Concepts
+
+Branch = independent line of development.
+
+Master/Main = default branch.
+
+Feature branch = branch to develop new feature.
+
+Merge = combine branch changes back into main.
+
+Conflict = when changes clash; must resolve manually.
+
+
+
+2. Branch Commands
+git branch                 # List all branches (local)
+git branch <branch_name>   # Create new branch
+git checkout <branch_name> # Switch branch
+git merge <branch_name>    # Merge specified branch into current
+git branch -d <branch_name># Delete branch (after merge)
+
+
+
+
+4. Advanced Concepts
+Concept	Details
+Rebase	Reapply commits on top of another branch (keeps history clean). git rebase main
+Stash	Temporarily save uncommitted changes. git stash, git stash apply
+Tag	Mark a commit as important (e.g., release v1.0). git tag v1.0
+Remote Branches	git fetch → get remote updates without merging; git pull → fetch + merge
+Forking	Copy repo on GitHub to your account to work independently
+Pull Request (PR)	Propose changes from your branch/fork to original repo
+GitHub Desktop	GUI to connect local Git with GitHub without terminal commands
+Flags	Options for commands. E.g., -m for message: git commit -m "Update readme"
+
+
+
+5. Tips & Best Practices
+
+Commit often with meaningful messages.
+
+Use branching for features and bug fixes.
+
+Pull remote changes before pushing.
+
+Resolve conflicts carefully.
+
+Tag important releases.
+
+Keep main branch stable; develop in feature branches.
+
+Always track which branch HEAD is pointing to: git status.
+
+✅ This guide is valid for future Git & GitHub versions, including professional collaboration workflows, GUI use (GitHub Desktop), and remote repositories.

@@ -1,0 +1,67 @@
+Step 1: Install Git
+
+Make sure Git is installed on your computer.
+
+git --version
+
+
+If it shows a version, Git is installed.
+
+Otherwise, download & install from https://git-scm.com.
+
+Step 2: Create a GitHub Account
+
+Go to https://github.com → Sign up.
+
+Create a username, email, and password.
+
+Step 3: Configure Git
+
+Set your Git username and email (must match GitHub email for commits):
+
+git config --global user.name "Your Name"
+git config --global user.email "youremail@example.com"
+
+
+Check config:
+
+git config --list
+
+Step 4: Create a Repository on GitHub
+
+Go to GitHub → click New repository.
+
+Give it a name (e.g., my-first-repo).
+
+Choose public/private, optionally add a README.
+
+Click Create repository.
+
+Step 5: Connect Local Git Repo to GitHub
+
+If you already have a local folder/project:
+
+cd path/to/your/project
+git init                        # Initialize Git locally (if not done)
+git add .                        # Stage all files
+git commit -m "Initial commit"   # First commit
+
+
+Then link to GitHub remote repo:
+
+git remote add origin https://github.com/username/my-first-repo.git
+
+
+Replace username and my-first-repo with your info.
+
+Step 6: Push Local Code to GitHub
+git push -u origin main
+
+
+main is your branch name (sometimes master).
+
+Git may ask for GitHub username & token/password (use Personal Access Token if required).
+
+Step 7: Verify
+
+Go to your GitHub repo → you should see your files.
